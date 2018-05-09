@@ -1,0 +1,21 @@
+body {
+  -webkit-transition: background 400ms ease;
+  transition: background 400ms ease; }
+
+body.fp-viewing-1,
+.fp-viewing-2,
+.fp-viewing-3 {
+  background: #D5D5D5; }
+
+@font-face {
+  font-family: 'apercu-regular';
+  src: url("font/apercu-regular.woff") format("woff"); }
+
+.section {
+  font-family: 'apercu-regular', 'helvetica', sans-serif;
+  font-size: 20px;
+  text-align: center; }
+
+.hero-text {
+  font-size: 4em;
+  margin: 0 6% 0 6%; }

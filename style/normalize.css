@@ -11,6 +11,11 @@
  html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 /* Sections
@@ -29,9 +34,37 @@ body {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
-h1 {
+/* h1 {
   font-size: 2em;
   margin: 0.67em 0;
+} */
+
+/* * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+h1 {
+  font-size: 74px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 48px; 
+}
+
+h3 {
+  font-size: 26px; 
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
 }
 
 /* Grouping content

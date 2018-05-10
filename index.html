@@ -5,8 +5,8 @@
   <title>title</title>
 
   <link rel="stylesheet" href="style/jquery.fullpage.css">
-  <link rel="stylesheet" href="style/main.css">
   <link rel="stylesheet" href="style/normalize.css">
+  <link rel="stylesheet" href="style/main.css">
 
   <script src="src/jquery.min.js"></script>
   <script src="src/jquery.easings.min.js"></script>
@@ -16,16 +16,27 @@
 </head>
 
 <body>
+  <header>
+    <h4>Troy Reyles</h4>
+    <ul>
+      <li>
+        <a href="#"><h4>Work</h4></a>
+      </li>
+      <li>
+        <a href="#"><h4>Connect</h4></a>
+      </li>
+    </ul>
+  </header>
   <div id="fullpage">
     <div class="section">
-      <p class="hero-text">
-          I’m a self-taught front-end developer based in Los Angeles. 
-          I enjoy clean aesthetics and writing readable code.
-      </p>
+      <div class="hero">
+          <h1>I’m a self-taught front end developer based in Los Angeles.
+              I enjoy clean aesthetics and writing readable code.</h1>
+      </div>
     </div>
-    <div class="section">Some Section Two</div>
-    <div class="section">Some Section Three</div>
-    <div class="section">Some Section Four</div>
+    <div class="section"><h4>Some Section Two</h4></div>
+    <div class="section"><h4>Some Section Two</h4></div>
+    <div class="section"><h4>Some Section Two</h4></div>
   </div>
 
   <script src="src/main.js"></script>

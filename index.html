@@ -11,16 +11,18 @@
   <script src="src/jquery.min.js"></script>
   <script src="src/jquery.easings.min.js"></script>
   <script src="src/jquery.fullpage.min.js"></script>
+  <script src="src/anime.min.js"></script>
+  <script src="src/velocity.min.js"></script>
 
   <meta name=viewport content="width=device-width, initial-scale=1">
 </head>
 
 <body>
   <header>
-    <h4>Troy Reyles</h4>
+    <h4 class="title">Troy Reyles</h4>
     <ul>
       <li>
-        <a href="#"><h4>Work</h4></a>
+        <a href="#"><h4>Works</h4></a>
       </li>
       <li>
         <a href="#"><h4>Connect</h4></a>
@@ -29,15 +31,25 @@
   </header>
   <div id="fullpage">
     <div class="section">
+      <img class="gray-arrow" src="arrow-animated.svg"/>
       <div class="hero">
           <h1>I’m a self-taught front end developer based in Los Angeles.
               I enjoy clean aesthetics and writing readable code.</h1>
       </div>
     </div>
-    <div class="section"><h4>Some Section Two</h4></div>
+    <!-- <div class="section"><img src="cinefile.png" height="620px"/></div> -->
+    <div class="section"><h4>Some Section One</h4></div>
     <div class="section"><h4>Some Section Two</h4></div>
     <div class="section"><h4>Some Section Two</h4></div>
   </div>
+  <footer>
+    <div class="titles">
+      <h4 class="cinefile">Cinefile &#8212; React App</h4>
+      <h4 class="polytone">Polytone &#8212; Javascript Experiment</h4>
+      <h4 class="css-studies">CSS Studies &#8212; CSS Studies</h4>
+    </div>
+    <a href="#" class="view-project"><h4>View Project</h4></a>
+  </footer>
 
   <script src="src/main.js"></script>
 </body>

@@ -1,0 +1,16 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="43px" height="549px" viewBox="0 0 43 549" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>gray arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="Hero" transform="translate(-645.000000, -240.000000)" fill="#FACEA1" stroke="#DADADA" stroke-width="4">
+            <g id="gray-arrow" transform="translate(647.000000, 242.000000)">
+                <path d="M19.5,0.5 L19.5,542.130871" id="Line" style="mix-blend-mode: multiply;" class="pQIjovVP_0"></path>
+                <path d="M19.5,543.5 L0.993244477,524.993244" id="Line-3" style="mix-blend-mode: multiply;" class="pQIjovVP_1"></path>
+                <path d="M19.5,543.5 L38.0049845,524.995016" id="Line-4" style="mix-blend-mode: multiply;" class="pQIjovVP_2"></path>
+            </g>
+        </g>
+    </g>
+<style data-made-with="vivus-instant">.pQIjovVP_0{stroke-dasharray:542 544;stroke-dashoffset:543;animation:pQIjovVP_draw_0 5100ms ease 0ms infinite,pQIjovVP_fade 5100ms linear 0ms infinite;}.pQIjovVP_1{stroke-dasharray:27 29;stroke-dashoffset:28;animation:pQIjovVP_draw_1 5100ms ease 0ms infinite,pQIjovVP_fade 5100ms linear 0ms infinite;}.pQIjovVP_2{stroke-dasharray:27 29;stroke-dashoffset:28;animation:pQIjovVP_draw_2 5100ms ease 0ms infinite,pQIjovVP_fade 5100ms linear 0ms infinite;}@keyframes pQIjovVP_draw{100%{stroke-dashoffset:0;}}@keyframes pQIjovVP_fade{0%{stroke-opacity:1;}94.11764705882354%{stroke-opacity:1;}100%{stroke-opacity:0;}}@keyframes pQIjovVP_draw_0{68.62745098039215%{stroke-dashoffset: 543}81.69934640522877%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes pQIjovVP_draw_1{71.89542483660131%{stroke-dashoffset: 28}84.9673202614379%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes pQIjovVP_draw_2{75.16339869281046%{stroke-dashoffset: 28}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}</style></svg>

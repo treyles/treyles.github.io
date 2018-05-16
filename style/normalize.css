@@ -12,6 +12,7 @@
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   box-sizing: border-box;
+  font-variant-ligatures: none;
 }
 
 *, *:before, *:after {
@@ -39,10 +40,10 @@ body {
   margin: 0.67em 0;
 } */
 
-/* * {
+* {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-} */
+}
 
 h1 {
   font-size: 74px;
@@ -58,7 +59,7 @@ h3 {
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 h1, h2, h3, h4 {

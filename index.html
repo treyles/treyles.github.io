@@ -8,49 +8,59 @@
   <link rel="stylesheet" href="style/normalize.css">
   <link rel="stylesheet" href="style/main.css">
 
-  <script src="src/jquery.min.js"></script>
-  <script src="src/jquery.easings.min.js"></script>
-  <script src="src/jquery.fullpage.min.js"></script>
-  <script src="src/anime.min.js"></script>
-  <script src="src/velocity.min.js"></script>
-
   <meta name=viewport content="width=device-width, initial-scale=1">
 </head>
 
 <body>
   <header>
-    <h4 class="title">Troy Reyles</h4>
-    <ul>
-      <li>
-        <a href="#"><h4>Works</h4></a>
-      </li>
-      <li>
-        <a href="#"><h4>Connect</h4></a>
-      </li>
-    </ul>
+    <a href="#" class="title link">
+      <h4>Troy Reyles</h4>
+    </a>
+    <a href="#" class="link">
+      <h4>Information</h4>
+    </a>
   </header>
   <div id="fullpage">
     <div class="section">
-      <img class="gray-arrow" src="arrow-animated.svg"/>
       <div class="hero">
-          <h1>I’m a self-taught front end developer based in Los Angeles.
-              I enjoy clean aesthetics and writing readable code.</h1>
+          <!-- <h1>I'm a self-taught front end developer based in Los Angeles who
+              likes minimal aesthetics and writing readable code.</h1> -->
+              <!-- <h1>I'm a front end developer who
+                  likes clean aesthetics and writing readable code.</h1> -->
+              <!-- <h1>Front end developer who likes minimal aesthetics and writing readable code.</h1> -->
+              <!-- <h1><span class="moveup">Front End </span><span class="moveup">Developer </span><span class="moveup">& Designer</span></h1> -->
+              <h1><span class="moveup">Front End </span><span class="moveup">Developer.</span></h1>
       </div>
     </div>
-    <!-- <div class="section"><img src="cinefile.png" height="620px"/></div> -->
-    <div class="section"><h4>Some Section One</h4></div>
-    <div class="section"><h4>Some Section Two</h4></div>
-    <div class="section"><h4>Some Section Two</h4></div>
+    <div class="section">
+      <h5>Cinefile</h5>
+      <div class="iphone-wrapper">
+          <img src="iphone.png"/>
+          <div class="iphone-content">video</div>
+      </div>
+    </div>
+    <div class="section"><h5>Polytone</h5></div>
+    <div class="section"><h5>Studies</h5></div>
   </div>
   <footer>
-    <div class="titles">
-      <h4 class="cinefile">Cinefile &#8212; React App</h4>
-      <h4 class="polytone">Polytone &#8212; Javascript Experiment</h4>
-      <h4 class="css-studies">CSS Studies &#8212; CSS Studies</h4>
-    </div>
-    <a href="#" class="view-project"><h4>View Project</h4></a>
+    <h4 class="titles">
+      <span class="current">01</span> / 03
+      <span class="separator"></span>
+      <span class="work-title">Cinefile</span>
+    </h4>
+    <!-- <div class="scroll-hint">Selected Work <span class="arrow">&darr;</span></div> -->
+    <a href="#" class="view-project link">
+      <h4>View Project</h4>
+    </a>
   </footer>
+  <div class="scroll-hint">Projects<span class="arrow">&darr;</span></div>
+  <div class="blackbox"></div>
+  <div class="bluedot"></div>
 
+  <script src="src/jquery.min.js"></script>
+  <script src="src/jquery.easings.min.js"></script>
+  <script src="src/jquery.fullpage.min.js"></script>
+  <script src="src/balancetext.min.js"></script>
   <script src="src/main.js"></script>
 </body>
 

@@ -2,7 +2,7 @@ $(function() {
   var slides = ['home', 'cinefile', 'polytone', 'css-studies'];
 
   // balanceText($('.hero h1'), {watch: true})
-
+  // balanceText($('.description'), {watch: true})
   
   $(document).mousemove(function(e){
     var mouseX = e.pageX;

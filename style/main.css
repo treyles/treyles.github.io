@@ -39,12 +39,26 @@
   src: url("font/plex-medium.woff") format("woff"); }
 
 .bluedot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   pointer-events: none;
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 999px;
-  background: #0041F8; }
+  background: #0041F8;
+  color: #fff;
+  font-size: 14px; }
+  .bluedot span {
+    position: absolute;
+    display: none; }
 
 .link {
   text-decoration: none;
@@ -78,7 +92,7 @@
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
   font-size: 18px;
-  color: #0041F8; }
+  color: #000; }
   .scroll-hint .arrow {
     position: absolute;
     top: 0;
@@ -127,8 +141,7 @@ header, footer {
 
 header {
   top: 0;
-  left: 0;
-  color: #0041F8; }
+  left: 0; }
 
 .section {
   display: -webkit-box;
@@ -154,7 +167,7 @@ header {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%); }
   .iphone-wrapper img {
-    height: 65vh;
+    height: 600px;
     position: relative; }
   .iphone-wrapper .iphone-content {
     position: absolute;
@@ -165,8 +178,28 @@ header {
     -o-object-fit: cover;
        object-fit: cover; }
     .iphone-wrapper .iphone-content .folio-iphone {
-      width: 100%;
-      height: 100%; }
+      width: 100%; }
+
+.macbook-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+  .macbook-wrapper img {
+    width: 45vw;
+    position: relative; }
+  .macbook-wrapper .macbook-content {
+    position: absolute;
+    top: 7%;
+    left: 12.4%;
+    width: 75.2%;
+    height: 80%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    background: #eee; }
+    .macbook-wrapper .macbook-content .folio-macbook {
+      width: 100%; }
 
 .hero {
   width: 80%;
@@ -182,8 +215,8 @@ header {
       left: -100px; }
   .hero h1 {
     font-family: 'larish-regular';
-    font-size: 10vw;
-    line-height: 13vw; }
+    font-size: 11vw;
+    line-height: 14vw; }
   @media only screen and (max-width: 768px) {
     .hero {
       width: 100%;
@@ -193,9 +226,9 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -204,8 +237,8 @@ footer {
     opacity: 0;
     -webkit-transition: .6s ease;
     transition: .6s ease;
-    color: gray;
-    font-size: 16px; }
+    color: #000;
+    font-size: 20px; }
     footer .view-project.show {
       opacity: 1; }
 

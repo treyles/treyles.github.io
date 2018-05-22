@@ -16,13 +16,6 @@ $(function() {
 
 
 
-$('.section').click(function() {
-  console.log('sections')
-})
-
-
-
-
 
 
 var lFollowX = 0,
@@ -62,9 +55,6 @@ moveBackground();
 
 
 
-
-
-
   $('.blackbox').slideUp(1000, 'easeInOutQuint');
 
   $('.hero').click(function() {
@@ -92,10 +82,16 @@ moveBackground();
     $('.current').html('0' + (index - 1));
 
     $('.work-title').html(function() {
-      if (slide === 'cinefile') return 'Cinefile';
-      if (slide === 'polytone') return 'Polytone';
-      if (slide === 'css-studies') return 'CSS Studies';
+      if (slide === 'cinefile') return 'Responsive React App.';
+      if (slide === 'polytone') return 'Javascript Experiment.';
+      if (slide === 'css-studies') return 'CSS Experiment.';
     });
+
+    // $('.section').mouseover(function() {
+    //   if(slide === 'home') {
+    //     $('.scroll').show();
+    //   }
+    // })
 
     $('.active h5')
       // .delay(100)
@@ -107,12 +103,24 @@ moveBackground();
     if (slide === 'cinefile') {
       var vid = document.querySelector('.folio-iphone');
       // vid.play();
-      // setTimeout(function() {
-      //   vid.play();
-      // }, 1000)
+      setTimeout(function() {
+        vid.play();
+      }, 3000)
+    }
+
+    if (slide === 'polytone') {
+      var vid = document.querySelector('.folio-macbook');
+      // vid.play();
+      setTimeout(function() {
+        vid.play();
+      }, 3000)
     }
 
     if (slide !== 'home') {
+      // $('.section').mouseover(function() {
+      //   $('.arrow').show();
+      // });
+
       $('.titles').addClass('show');
       
       $('.view-project')
@@ -124,19 +132,25 @@ moveBackground();
 
   function leaveSlide(index, nextSlide) {
     if (nextSlide === 1) {
+      // $('.arrow').hide();
       $('.view-project').removeClass('show');
       // $('.titles').removeClass('show');
       // $('#fp-nav').fadeOut();
-      $('header').css({ color: '#0041F8'})
+      // $('header').css({ color: '#0041F8'})
       $('.scroll-hint').fadeIn();
     } else {
       $('.scroll-hint').fadeOut();
-      $('header').css({ color: '#000'})
+      // $('header').css({ color: '#000'})
     }
     $('.titles').removeClass('show');
     $('h5').fadeOut();
+    $('.view-project').removeClass('show');
 
     var vid = document.querySelector('.folio-iphone');
+    vid.pause();
+    vid.currentTime = 0;
+
+    var vid = document.querySelector('.folio-macbook');
     vid.pause();
     vid.currentTime = 0;
     // $('.work-title').slideUp();

@@ -1,4 +1,5 @@
-$hero-gray: #D5D5D5;
+// $hero-gray: #D5D5D5;
+$hero-gray: lightgray;
 // $hero-gray: #e3e3e3;
 $hero-text: #0041F8; // blue
 // $hero-text: #000;
@@ -6,12 +7,23 @@ $hero-text: #0041F8; // blue
 // $hero-text: #EF887D; //pink
 
 // $hero-gray: #eee;
-// * {cursor: none;}
+* {cursor: none;}
+* {
+  box-sizing: border-box;
+}
+* ::-webkit-scrollbar {
+  display: none; }
 
 @font-face {
   font-family: 'apercu-regular';
   src: url('font/apercu-regular.woff') format('woff');
 }
+
+@font-face {
+  font-family: 'apercu-light';
+  src: url('font/apercu-light.woff') format('woff');
+}
+
 
 @font-face {
   font-family: 'larish-regular';
@@ -80,16 +92,29 @@ $hero-text: #0041F8; // blue
   }
 }
 
+body {
+  font-family: 'apercu-light', 'helvetica', sans-serif;
+  margin: 3vh 0 8vh 0;
+}
+
+
+h1, h2 {
+  font-family: 'portrait-medium', sans-serif;
+}
+
+
 .bluedot {
   @include flex;
   pointer-events: none;
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 999px;
   background: $hero-text;
+  // background: #E49D38;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
+  z-index: 999;
   // mix-blend-mode: multiply;
 
   span {
@@ -129,72 +154,147 @@ $hero-text: #0041F8; // blue
   &:hover:after {
     width: 100%;
   }
-
-  // &:hover {
-  //   color: rgba(0, 0, 0, 0);
-  // }
 }
 
-.scroll-hint {
-  position: fixed;
-  bottom: 4vw;
-  // right: 5vw;
-  left: 50%;
-  transform: translate(-50%, 0);
-  font-size: 18px;
-  // color: #0041F8;
-  color: #000;
-  // color: $hero-text;
-  // -webkit-font-smoothing: antialiased;
+// .underline {
+//   &:after {
+//     content: '';
+//     position: absolute;
+//     width: 0;
+//     bottom: -10px;
+//     left: 0;
+//     height: 1px;
+//     background: #fff;
+//     transition: width .4s cubic-bezier(.12,.83,.41,.97);
+//     // transition: width .3s ease-out;
+//   }
 
-  .arrow {
-    // font-size: 18px;
+//   &.animate-ul:after {
+//     width: 100%;
+//   }
+// }
+
+
+
+.about-section,
+.projects-section,
+.github-section,
+.connect-section {
+  @include flex;
+  border-bottom: 1px solid #eee;
+  position: relative;
+
+  .pull-bg {
+    z-index: 0;
     position: absolute;
-    top: 0;
-    // left: 50%;
-    // transform: translate(-50%, 0);
-    right: -20px;
-    // animation-timing-function: 'cubic-bezier(0.860, 0.000, 0.070, 1.000)';
-    animation: upDown 1s ease infinite;
+    // bottom: 0;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    margin: 0;
+    background: #000;
+    transform-origin: center;
   }
   
-  @keyframes upDown {
-    0%, 100% { top: -3px; }
-    50% { top: 3px; }
+  div {
+    margin: 9vh 4vh;
+    width: 1000px;
+    text-align: center;
+  }
+
+  h4 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 4vh;
+
+    .underline {
+      position: absolute;
+      width: 100%;
+      transform-origin: left;
+      transform: scaleX(0);
+      bottom: -10px;
+      left: 0;
+      height: 1px;
+      background: #fff;
+    }
+
+    // .about-ul {
+    //   position: absolute;
+    //   width: 100%;
+    //   transform-origin: left;
+    //   bottom: -10px;
+    //   left: 0;
+    //   height: 1px;
+    //   background: #000;
+    // }
+  }
+
+  .content {
+    z-index: 2;
   }
 }
 
-body {
-  // background-color: #F7E8D7;
-  transition: background 800ms ease;
-  font-family: 'apercu-regular', 'helvetica', sans-serif;
-}
+// .projects-section {
+//   .pull-bg {
+//     background: #E7CF84;
+//   }
+// }
 
-.fp-viewing-cinefile,
-.fp-viewing-polytone,
-.fp-viewing-css-studies {
-  background: $hero-gray;
-}
+// .github-section {
+//   .pull-bg {
+//     background: #2968A7;
+//   }
+// }
+
+// .projects {
+//   position: relative;
+
+//   .pull-bg {
+//     // opacity: 0;
+//     z-index: 0;
+//     position: absolute;
+//     // pointer-events: none;
+//     bottom: 0;
+//     width: 100%;
+//     height: 100%;
+//     transform: scaleY(0);
+//     margin: 0;
+//     background: #000;
+//     transform-origin: bottom;
+//     // transition: transform .5s cubic-bezier(.12,.83,.41,.97);
+
+//     // &.animate {
+//     //   transform: scaleY(1);
+//     // }
+//   }
+// }
 
 
 
 
 
-header, footer {
+
+
+
+
+
+
+
+// PROJECT PAGES
+
+header {
   @include flex(space-between);
   position: fixed;
+  top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 9;
   width: 100%;
   height: 16vh;
   padding: 0 6vw;
-}
 
-.project-info {
-  padding: 0 6vw;
-  padding-top: 20vh;
-
- 
   .external-links > a {
     display: inline-block;
 
@@ -202,12 +302,14 @@ header, footer {
       margin-right: 75px;
     }
   }
+}
 
-  .description {
-    font-family: 'larish-regular', sans-serif;
+.project-info {
+  padding: 0 6vw;
+  padding-top: 20vh;
+
+  h2 {
     margin-top: 4.5vh;
-    font-size: 48px;
-    line-height: 69px;
   }
 
   .hashtags {
@@ -248,7 +350,7 @@ header, footer {
   .half {
     width: calc(50% - 2vw);
     background: #eee;
-    height: 800px;
+    height: 500px;
     margin: 2vw 0;
 
     @include mobile {
@@ -258,199 +360,44 @@ header, footer {
   }
 }
 
-.section {
-  @include flex;
-
-  h5 {
-    font-family: 'larish-regular';
-    // font-family: 'plex-medium';
-    // font-family: 'portrait-medium';
-    // font-family: 'portrait-regular';
-    // font-family: 'bluunext-bold-webfont';
-    // font-family: 'vesper libre';
-    display: none;
-    color: #fff;
-    // color: #eee;
-    // font-size: 23vw;
-    // font-size: 20vw;
-    // font-size: 16vw;
-    font-size: 18vw;
-    font-weight: normal;
-    //moderat padding
-    // padding-bottom: 30px;
-    // letter-spacing: 1.5vw;
-    // color: rgba(0, 0, 0, 0);
-    // -webkit-text-stroke-width: 1px;
-    // -webkit-text-stroke-color: #000;
-  }
-}
-
-.iphone-wrapper {
-  @include absolute-center;
-
-
-  img {
-    // height: 65vh;
-    height: 600px;
-    // height: 80vh;
-    position: relative;
-
-    // box-shadow: 3px 3px 30px 10px rgba(0,0,0, 0.2)
-  }
-
-  .iphone-content {
-    // @include flex;
-    position: absolute;
-    top: 12.3%;
-    left: 7.1%;
-    width: 86%;
-    height: 74.8%;
-    object-fit: cover;
-    // background: #eee;
-
-    .folio-iphone {
-      width: 100%;
-      // height: 100%;
-      // z-index: 999;
-    }
-  }
-}
-
-.macbook-wrapper {
-  @include absolute-center;
-
-
-  img {
-    // height: 65vh;
-    // height: 500px;
-    // height: 80vh;
-    width: 45vw;
-    position: relative;
-
-    // box-shadow: 3px 3px 30px 10px rgba(0,0,0, 0.2)
-  }
-
-  .macbook-content {
-    // @include flex;
-    position: absolute;
-    top: 7%;
-    left: 12.4%;
-    width: 75.2%;
-    height: 80%;
-    object-fit: cover;
-    background: #eee;
-
-    .folio-macbook {
-      width: 100%;
-      // height: 100%;
-      // z-index: 999;
-    }
-  }
-}
-
-// h4 {
-//   color: white;
-// }
-
-.hero {
-  // display: none;
-  width: 80%;
-  // color: white;
-  // margin-left: 9vw;
-  // text-align: center;
+.next-project {
+  @include flex(flex-end);
+  padding: 0 6vw;
+  margin: 12vh 0 6vh 0;
   // background: #eee;
-  // moderat padding
-  // transform: translate(-100px);
-  padding-bottom: 30px;
-  cursor: default;
 
-  .location {
-    position: absolute;
-    right: 200px;
-    top: 600px;
-    font-size: 14px;
-
-    .based {
-      position: absolute;
-      left: -100px;
-    }
+  .content {
+    width: 600px;
+    // background: gray;
   }
 
-  h1 {
-    // font-size: 5.5vw;
-    font-family: 'larish-regular';
-    // font-family: 'plex-regular';
-    // font-family: 'plex-medium';
-    // font-family: 'portrait-light';
-    // font-family: 'portrait-regular';
-    // font-family: 'portrait-medium';
-    // font-family: 'bluunext-bold-webfont';
-    // font-family: 'vesper libre';
-    // font-family: 'moderat';
-    
-    //portrait
-    // font-size: 14vw;
-    // line-height: 30vh;
-
-    // orig
-    // font-size: 10vw;
-    // line-height: 13vw;
-
-    font-size: 11vw;
-    line-height: 14vw;
-
-    // 3d
-    // font-size: 13vw;
-    // line-height: 15vw;
-
-    // moderat - large
-    // font-size: 12vw;
-    // line-height: 23vh;
-
-    // portrait - smaller
-    // font-size: 6vw;
-    // line-height: 13vh;
-    // font-size: 100px;
-    // line-height: 15vh;
-
-    // portrait - block
-    // font-size: 6.5vw;
-    // line-height: 15vh;
-
-    // font-size: 105px;
-    // line-height: 14vh;
-
-
-    // text-align: left;
-    // text-align-last: justify;
-
-    // color: rgba(0, 0, 0, 0);
-    // -webkit-text-stroke-width: 1px;
-    // -webkit-text-stroke-color: black;
+  p {
+    // font-family: 'larish-regular', sans-serif;
+    font-size: 48px;
+    line-height: 69px;
+    margin-top: 25px;
+    margin-bottom: 0;
   }
 
-  @include mobile {
-    width: 100%;
-    padding: 0 4vw 0 4vw;
-  }
+  // a {
+  //   text-decoration: none;
+  //   color: inherit;
+  //   transition: .3s ease;
+
+  //   &:hover {
+  //     color: #0041F8;
+  //   }
+  // }
 }
 
 footer {
-  @include flex(space-between);
-  bottom: 0px;
-
-  .view-project {
-    opacity: 0;
-    transition: .6s ease;
-    color: #000;
-    // color: gray;
-    font-size: 20px;
-
-    &.show {
-      opacity: 1;
-    }
-  }
+  color: #A8A8A8;
+  padding: 30px 6vw;
 }
+
+
+
+// PAGE TRANSITION
 
 .blackbox {
   position: fixed;
@@ -460,8 +407,80 @@ footer {
   width: 100%;
   height: 100%;
   background: #000;
+  // transform: translate(0%, -99%);
 }
 
-// #fp-nav {
-//   display: none;
+
+
+
+
+
+
+
+
+
+
+// MOCKS
+
+// .iphone-wrapper {
+//   @include absolute-center;
+
+
+//   img {
+//     // height: 65vh;
+//     height: 600px;
+//     // height: 80vh;
+//     position: relative;
+
+//     // box-shadow: 3px 3px 30px 10px rgba(0,0,0, 0.2)
+//   }
+
+//   .iphone-content {
+//     // @include flex;
+//     position: absolute;
+//     top: 12.3%;
+//     left: 7.1%;
+//     width: 86%;
+//     height: 74.8%;
+//     object-fit: cover;
+//     // background: #eee;
+
+//     .folio-iphone {
+//       width: 100%;
+//       // height: 100%;
+//       // z-index: 999;
+//     }
+//   }
+// }
+
+// .macbook-wrapper {
+//   @include absolute-center;
+
+
+//   img {
+//     // height: 65vh;
+//     // height: 500px;
+//     // height: 80vh;
+//     width: 45vw;
+//     position: relative;
+
+//     // box-shadow: 3px 3px 30px 10px rgba(0,0,0, 0.2)
+//   }
+
+//   .macbook-content {
+//     // @include flex;
+//     position: absolute;
+//     top: 7%;
+//     left: 12.4%;
+//     width: 75.2%;
+//     height: 80%;
+//     object-fit: cover;
+//     background: #eee;
+
+//     .folio-macbook {
+//       width: 100%;
+//       // height: 100%;
+//       // z-index: 999;
+//     }
+//   }
 // }

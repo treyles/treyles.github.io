@@ -1,162 +1,93 @@
-$(function() {
-  var slides = ['home', 'cinefile', 'polytone', 'css-studies'];
+var hoverDelay;
 
-  // balanceText($('.hero h1'), {watch: true})
-  // balanceText($('.description'), {watch: true})
-  
-  $(document).mousemove(function(e){
-    var mouseX = e.pageX;
-    var mouseY = e.pageY;
+$(document).mousemove(function(e){
+  var mouseX = e.pageX;
+  var mouseY = e.pageY;
 
-    $(".bluedot").css({
-      left:mouseX - 25, 
-      top:mouseY -25
-    });
+  $(".bluedot").css({
+    left:mouseX - 25, 
+    top:mouseY -25
   });
+});
+
+var sections = document.querySelectorAll('.home')
+
+sections.forEach(function(el) {
+  el.addEventListener('mouseenter', enterButton.bind(this));
+  el.addEventListener('mouseleave', leaveButton.bind(this));
+})
 
 
+// because anime overwrites initial
+// css transforms we need to set them here
+anime({
+  targets: ['.pull-bg', '.underline'],
+  scaleY: [0, 0],
+  scaleX: [0, 0]
+})
 
 
+var box = anime({
+  targets: '.blackbox',
+  translateY: '-100%',
+  duration: 800,
+  easing: 'easeInOutQuint',
+  delay: 1500,
+})
+// var eye = anime({
+//   targets: '.eye',
+//   rotateX: {
+//     value: '70deg',
+//     duration: 80,
+//     easing: 'easeInOutQuint'
+//   },
+//   direction: 'alternate',
+//   autoplay: false
+// }) 
 
-var lFollowX = 0,
-    lFollowY = 0,
-    x = 0,
-    y = 0,
-    friction = 1 / 20;
+function enterButton(e) {
+  hoverDelay = setTimeout(function() {
+    pullBackground(e.target, [0, 1], true, [0, 1]);
+  }, 500)
+};
 
-function moveBackground() {
-  x += (lFollowX - x) * friction;
-  y += (lFollowY - y) * friction;
-  
-  translate = 'translate(' + x + 'px, ' + y + 'px)';
+function leaveButton(e) {
+  clearTimeout(hoverDelay);
+  pullBackground(e.target, 0, false, 0);
+};
 
-  $('.plax').css({
-    'transform': translate
-  });
 
-  // $('.hero').css({
-  //   'transform': translate
-  // });
+function pullBackground(target, bg, text, ul) {
+  var section = '.' + target.className.split(' ').join('.');
 
-  window.requestAnimationFrame(moveBackground);
+  // clear elements to stop
+  // previous animations
+  // anime.remove(section + '.pull-bg');
+  // anime.remove(section + '.heading');
+  // anime.remove(section + '.underline');
+
+  anime({
+    targets: section + ' .pull-bg',
+    scaleY: {
+      value: bg,
+      duration: 500,
+      easing: 'easeInOutQuint'
+    }
+  })
+
+  anime({
+    targets: section + ' .heading',
+    color: text ? '#fff' : '#000',
+    duration: 300,
+    easing: 'easeInOutQuint',
+    delay: 50
+  })
+
+  anime({
+    targets: section + ' .underline',
+    scaleX: ul,
+    duration: 375,
+    easing: 'easeInOutQuint',
+    delay: 150
+  })
 }
-
-$(window).on('mousemove', function(e) {
-
-  var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
-  var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
-  lFollowX = (15 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
-  lFollowY = (10 * lMouseY) / 100;
-
-});
-
-moveBackground();
-
-
-
-
-  $('.blackbox').slideUp(1000, 'easeInOutQuint');
-
-  $('.hero').click(function() {
-    $('.blackbox').slideDown(1000, 'easeInOutQuint');
-  });
-
-
-  // $('.hero').slideDown({
-  //   easing: 'easeInOutQuint',
-  //   duration: 1000
-  // });
-
-  $('#fullpage').fullpage({
-    anchors: slides,
-    afterLoad: loadSlide,
-    onLeave: leaveSlide,
-    lockAnchors: true,
-    continuousVertical: true,
-    verticalCentered: false,
-    // navigation: true,
-    easingcss3: 'cubic-bezier(0.860, 0.000, 0.070, 1.000)'
-  });
-
-  function loadSlide(slide, index) {
-    $('.current').html('0' + (index - 1));
-
-    $('.work-title').html(function() {
-      if (slide === 'cinefile') return 'Responsive React App.';
-      if (slide === 'polytone') return 'Javascript Experiment.';
-      if (slide === 'css-studies') return 'CSS Experiment.';
-    });
-
-    // $('.section').mouseover(function() {
-    //   if(slide === 'home') {
-    //     $('.scroll').show();
-    //   }
-    // })
-
-    $('.active h5')
-      // .delay(100)
-      .slideDown({
-        easing: 'easeOutCubic',
-        duration: 600
-      });
-    
-    if (slide === 'cinefile') {
-      var vid = document.querySelector('.folio-iphone');
-      // vid.play();
-      setTimeout(function() {
-        vid.play();
-      }, 3000)
-    }
-
-    if (slide === 'polytone') {
-      var vid = document.querySelector('.folio-macbook');
-      // vid.play();
-      setTimeout(function() {
-        vid.play();
-      }, 3000)
-    }
-
-    if (slide !== 'home') {
-      // $('.section').mouseover(function() {
-      //   $('.arrow').show();
-      // });
-
-      $('.titles').addClass('show');
-      
-      $('.view-project')
-        .addClass('show')
-        .attr('href', 'src/' + slide + '.html');
-      // $('#fp-nav').fadeIn();
-    }
-  }
-
-  function leaveSlide(index, nextSlide) {
-    if (nextSlide === 1) {
-      // $('.arrow').hide();
-      $('.view-project').removeClass('show');
-      // $('.titles').removeClass('show');
-      // $('#fp-nav').fadeOut();
-      // $('header').css({ color: '#0041F8'})
-      $('.scroll-hint').fadeIn();
-    } else {
-      $('.scroll-hint').fadeOut();
-      // $('header').css({ color: '#000'})
-    }
-    $('.titles').removeClass('show');
-    $('h5').fadeOut();
-    $('.view-project').removeClass('show');
-
-    var vid = document.querySelector('.folio-iphone');
-    vid.pause();
-    vid.currentTime = 0;
-
-    var vid = document.querySelector('.folio-macbook');
-    vid.pause();
-    vid.currentTime = 0;
-    // $('.work-title').slideUp();
-    // $.each(slides, function(index, value) {
-    //   var selector = '.' + value;
-    //   $(selector).removeClass('show');
-    // });
-  }
-});

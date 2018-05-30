@@ -1,13 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Vesper+Libre:500");
-* {
-  cursor: none; }
+::-moz-selection {
+  background: #0041F8;
+  text-shadow: none;
+  color: #FFF; }
+::selection {
+  background: #0041F8;
+  text-shadow: none;
+  color: #FFF; }
 
 * {
+  cursor: url("/assets/blue-cursor.png") 8 8, auto;
+  cursor: -webkit-image-set(url("/assets/blue-cursor.png") 1x, url("/assets/blue-cursor2.png") 2x) 8 8, auto;
+  cursor: image-set(url("/assets/blue-cursor.png") 1x, url("/assets/blue-cursor2.png") 2x) 8 8, auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
 * ::-webkit-scrollbar {
   display: none; }
+
+a {
+  cursor: url("/assets/blue-cursor-click.png") 25 25, auto;
+  cursor: -webkit-image-set(url("/assets/blue-cursor-click.png") 1x, url("/assets/blue-cursor-click2.png") 2x) 25 25, auto;
+  cursor: image-set(url("/assets/blue-cursor-click.png") 1x, url("/assets/blue-cursor-click2.png") 2x) 25 25, auto; }
 
 @font-face {
   font-family: 'apercu-regular';
@@ -51,7 +65,7 @@
 
 body {
   font-family: 'apercu-light', 'helvetica', sans-serif;
-  margin: 3vh 0 8vh 0; }
+  margin-top: 2vh; }
 
 h1, h2 {
   font-family: 'portrait-medium', sans-serif; }
@@ -96,7 +110,7 @@ h1, h2 {
     content: '';
     position: absolute;
     width: 0;
-    height: 2px;
+    height: 1px;
     margin-top: 5px;
     background: #000;
     -webkit-transition: width .3s;
@@ -118,7 +132,9 @@ h1, h2 {
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid #eee;
-  position: relative; }
+  position: relative;
+  overflow: hidden;
+  pointer-events: none; }
   .about-section .pull-bg,
   .projects-section .pull-bg,
   .github-section .pull-bg,
@@ -133,17 +149,21 @@ h1, h2 {
     background: #000;
     -webkit-transform-origin: center;
             transform-origin: center; }
-  .about-section div,
-  .projects-section div,
-  .github-section div,
-  .connect-section div {
+  .about-section .content,
+  .projects-section .content,
+  .github-section .content,
+  .connect-section .content {
     margin: 9vh 4vh;
     width: 1000px;
-    text-align: center; }
+    text-align: center;
+    z-index: 2;
+    -webkit-transform: translateY(490px);
+            transform: translateY(490px); }
   .about-section h4,
   .projects-section h4,
   .github-section h4,
   .connect-section h4 {
+    opacity: 0;
     position: relative;
     display: inline-block;
     margin-bottom: 4vh; }
@@ -161,11 +181,32 @@ h1, h2 {
       left: 0;
       height: 1px;
       background: #fff; }
-  .about-section .content,
-  .projects-section .content,
-  .github-section .content,
-  .connect-section .content {
-    z-index: 2; }
+
+@-webkit-keyframes colorchange {
+  0% {
+    background: #E7CF84; }
+  40% {
+    background: #2968A7; }
+  80% {
+    background: #DFB6B9; }
+  100% {
+    background: #87C3BC; } }
+
+@keyframes colorchange {
+  0% {
+    background: #E7CF84; }
+  40% {
+    background: #2968A7; }
+  80% {
+    background: #DFB6B9; }
+  100% {
+    background: #87C3BC; } }
+
+.projects-section .pull-bg {
+  background: #E7CF84;
+  border-bottom: none;
+  -webkit-animation: colorchange 50s;
+          animation: colorchange 50s; }
 
 header {
   display: -webkit-box;
@@ -187,7 +228,7 @@ header {
   header .external-links > a {
     display: inline-block; }
     header .external-links > a:nth-child(1) {
-      margin-right: 75px; }
+      margin-right: 6vw; }
 
 .project-info {
   padding: 0 6vw;
@@ -267,10 +308,20 @@ header {
     margin-bottom: 0; }
 
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #A8A8A8;
-  padding: 30px 6vw; }
+  padding: 40px 6vw; }
 
-.blackbox {
+.blackbox,
+.project-blackbox {
   position: fixed;
   top: 0;
   left: 0;
@@ -278,3 +329,23 @@ footer {
   width: 100%;
   height: 100%;
   background: #000; }
+
+.load-project {
+  z-index: 999;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff; }
+  .load-project h1 {
+    font-size: 10vw; }

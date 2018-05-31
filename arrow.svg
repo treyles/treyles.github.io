@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="26px" height="18px" viewBox="0 0 26 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="19px" height="13px" viewBox="0 0 19 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
-    <title>Cinefile Project Full</title>
+    <title>Hero</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Cinefile-Project-Full" transform="translate(-104.000000, -80.000000)" fill="#000000">
-            <g id="top-navigation" transform="translate(104.000000, 80.000000)">
-                <g id="arrow" transform="translate(13.000000, 9.000000) rotate(-180.000000) translate(-13.000000, -9.000000) ">
-                    <path d="M2.59319394,9.50394604 L9.68192362,16.5926757 L8.70285269,17.5717467 L-0.00572556098,8.8631684 L0.0458044879,8.81163835 L-0.00572556098,8.7601083 L8.70285269,0.0515300488 L9.68192362,1.03060098 L2.59319394,8.11933066 L25.8138414,8.11933066 L25.8138414,9.50394604 L2.59319394,9.50394604 Z" id="Combined-Shape" transform="translate(12.906921, 8.811638) rotate(-180.000000) translate(-12.906921, -8.811638) "></path>
-                </g>
+    <g id="Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="Hero" transform="translate(-1241.000000, -573.000000)" stroke="#000000">
+            <g id="arrow" transform="translate(1250.500000, 579.500000) rotate(-180.000000) translate(-1250.500000, -579.500000) translate(1241.000000, 573.000000)">
+                <path d="M0.600000016,6.5 L17.5,6.5" id="Line-9"></path>
+                <path d="M17.6,6.5 L13.6,0.5" id="Line-10"></path>
+                <path d="M17.6,6.5 L13.6,12.5" id="Line-11"></path>
             </g>
         </g>
     </g>

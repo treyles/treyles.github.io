@@ -41,6 +41,14 @@ a {
     url('/assets/blue-cursor-click.png') 1x,
     url('/assets/blue-cursor-click2.png') 2x
   ) 25 25, auto;
+
+  &.back {
+    cursor: url('/assets/blue-cursor-back.png') 25 25, auto;
+    cursor: image-set(
+      url('/assets/blue-cursor-back.png') 1x,
+      url('/assets/blue-cursor-back2.png') 2x
+    ) 25 25, auto;
+  }
 }
 
 @font-face {
@@ -158,6 +166,7 @@ h1, h2 {
   color: inherit;
   position: relative;
   transition: .3s ease;
+  outline: none;
 
   // increase clickable area for cursor
   &:before {
@@ -224,7 +233,8 @@ h1, h2 {
     transform: scaleY(0);
     margin: 0;
     background: #000;
-    transform-origin: center;
+    transform-origin: middle;
+    // border-bottom: 1px solid #000;
   }
   
   .content {
@@ -303,21 +313,21 @@ h1, h2 {
 //   animation: colorchange 50s;
 // }
 
-@keyframes colorchange
-{
-  0%  {background: #E7CF84;}
-  40%  {background: #2968A7;}
-  80%  {background: #DFB6B9;}
-  100% {background: #87C3BC;}
-}
+// @keyframes colorchange
+// {
+//   0%  {background: #E7CF84;}
+//   40%  {background: #2968A7;}
+//   80%  {background: #DFB6B9;}
+//   100% {background: #87C3BC;}
+// }
 
-.projects-section {
-  .pull-bg {
-    background: #E7CF84;
-    border-bottom: none;
-    animation: colorchange 50s;
-  }
-}
+// .projects-section {
+//   .pull-bg {
+//     background: #E7CF84;
+//     border-bottom: none;
+//     animation: colorchange 50s;
+//   }
+// }
 
 
 
@@ -351,6 +361,32 @@ header {
   width: 100%;
   height: 16vh;
   padding: 0 6vw;
+  transition: .3s ease;
+  
+  a {
+    position: relative;
+
+    &:before {
+      content: '';
+      // background: #eee;
+      // mix-blend-mode: multiply;
+      position: absolute;
+      top: -100%;
+      left: -30%;
+      width: 160%;
+      height: 290%;
+    }
+  }
+
+  img {
+    margin-right: 8px;
+  }
+
+  img,
+  span {
+    pointer-events: none;
+    font-size: 18px;
+  }
 
   .external-links > a {
     display: inline-block;
@@ -363,10 +399,11 @@ header {
 
 .project-info {
   padding: 0 6vw;
-  padding-top: 20vh;
+  padding-top: 24vh;
 
   h2 {
-    margin-top: 4.5vh;
+    // margin-top: 4.5vh;
+    max-width: 1200px;
   }
 
   .hashtags {
@@ -492,7 +529,7 @@ footer {
   // background: #eee;
   
   h1 {
-    font-size: 10vw;
+    font-size: 13vw;
   }
 }
 

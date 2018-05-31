@@ -22,6 +22,10 @@ a {
   cursor: url("/assets/blue-cursor-click.png") 25 25, auto;
   cursor: -webkit-image-set(url("/assets/blue-cursor-click.png") 1x, url("/assets/blue-cursor-click2.png") 2x) 25 25, auto;
   cursor: image-set(url("/assets/blue-cursor-click.png") 1x, url("/assets/blue-cursor-click2.png") 2x) 25 25, auto; }
+  a.back {
+    cursor: url("/assets/blue-cursor-back.png") 25 25, auto;
+    cursor: -webkit-image-set(url("/assets/blue-cursor-back.png") 1x, url("/assets/blue-cursor-back2.png") 2x) 25 25, auto;
+    cursor: image-set(url("/assets/blue-cursor-back.png") 1x, url("/assets/blue-cursor-back2.png") 2x) 25 25, auto; }
 
 @font-face {
   font-family: 'apercu-regular';
@@ -98,7 +102,8 @@ h1, h2 {
   color: inherit;
   position: relative;
   -webkit-transition: .3s ease;
-  transition: .3s ease; }
+  transition: .3s ease;
+  outline: none; }
   .link:before {
     content: '';
     position: absolute;
@@ -147,8 +152,8 @@ h1, h2 {
             transform: scaleY(0);
     margin: 0;
     background: #000;
-    -webkit-transform-origin: center;
-            transform-origin: center; }
+    -webkit-transform-origin: middle;
+            transform-origin: middle; }
   .about-section .content,
   .projects-section .content,
   .github-section .content,
@@ -182,32 +187,6 @@ h1, h2 {
       height: 1px;
       background: #fff; }
 
-@-webkit-keyframes colorchange {
-  0% {
-    background: #E7CF84; }
-  40% {
-    background: #2968A7; }
-  80% {
-    background: #DFB6B9; }
-  100% {
-    background: #87C3BC; } }
-
-@keyframes colorchange {
-  0% {
-    background: #E7CF84; }
-  40% {
-    background: #2968A7; }
-  80% {
-    background: #DFB6B9; }
-  100% {
-    background: #87C3BC; } }
-
-.projects-section .pull-bg {
-  background: #E7CF84;
-  border-bottom: none;
-  -webkit-animation: colorchange 50s;
-          animation: colorchange 50s; }
-
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -224,7 +203,24 @@ header {
   z-index: 9;
   width: 100%;
   height: 16vh;
-  padding: 0 6vw; }
+  padding: 0 6vw;
+  -webkit-transition: .3s ease;
+  transition: .3s ease; }
+  header a {
+    position: relative; }
+    header a:before {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: -30%;
+      width: 160%;
+      height: 290%; }
+  header img {
+    margin-right: 8px; }
+  header img,
+  header span {
+    pointer-events: none;
+    font-size: 18px; }
   header .external-links > a {
     display: inline-block; }
     header .external-links > a:nth-child(1) {
@@ -232,9 +228,9 @@ header {
 
 .project-info {
   padding: 0 6vw;
-  padding-top: 20vh; }
+  padding-top: 24vh; }
   .project-info h2 {
-    margin-top: 4.5vh; }
+    max-width: 1200px; }
   .project-info .hashtags {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -348,4 +344,4 @@ footer {
   height: 100%;
   color: #fff; }
   .load-project h1 {
-    font-size: 10vw; }
+    font-size: 13vw; }

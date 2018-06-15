@@ -9,21 +9,21 @@
 </head>
 
 <body>
-  <header>
+  <div class="project-header">
     <a href="/index.html" class="internal back">
       <img src="arrow.svg"/>
-      <!-- <span>Home</span> -->
+      <span>Home</span>
     </a>
     <div class="external-links">
       <a href="https://cinefile.io/" target="_blank" class="link">
-        <h5>Visit Site</h5>
+        Visit Site
       </a>
       <a href="https://github.com/treyles/cinefile" target="_blank" class="link">
-        <h5>See Repo</h5>
+        See Repo
       </a>
     </div>
-  </header>
-  <section class="project-info">
+  </div>
+  <section class="project-info animate-up in-view">
     <h2>Urban Fruit, a fun, bold snacks company that are completely bananas about fruit. I designed a new, mobile optimised website for them to show off their products and share their story.</h2>
     <div class="hashtags">
       <ul>
@@ -47,33 +47,33 @@
     <div class="full">
       <img src="assets/cinefile/cinefile-01.jpg" />
     </div>
-    <div class="half">b</div>
-    <div class="half">c</div>
+    <div class="half animate-up">b</div>
+    <div class="half animate-up">c</div>
   </section>
   <section class="next-project">
-    <div class="content">
-      <h4>Next Project</h4>
-      <p>
-        <a href="/polytone.html" class="internal"><h2>A Music Sequencer and Animation Experiment.</h2></a>
-      </p>
+    <div class="pull-bg"></div>
+    <div class="content animate-up">
+      <h4>
+        Next Project
+        <span class="underline"></span>
+      </h4>
+      <h2>
+        <a href="/polytone.html" class="internal">
+          A Music Sequencer and Animation Experiment.
+        </a>
+      </h2>
     </div>
   </section>
-  <footer class="project-footer">
-    <h5>All Rights Reserved. 2018.</h5>
-  </footer>
+  
   <div class="blackbox"></div>
-  <div class="load-project">
+  <div class="project-title">
     <h1>Cinefile</h1>
   </div>
   
-  <!-- <script src="src/jquery.min.js"></script> -->
-  <!-- <script src="src/balancetext.min.js"></script>
-  <script src="src/anime.min.js"></script> -->
   <script src="src/CustomEase.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.0/plugins/CSSPlugin.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.0/TweenLite.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.0/TimelineLite.min.js"></script>
-  <script src="src/main.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+  <script src="src/transition.js"></script>
+  <script src="src/project.js"></script> 
 </body>
 
 </html>

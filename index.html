@@ -5,22 +5,90 @@
   <title>Troy Codes</title>
 
   <link rel="stylesheet" href="style/normalize.css">
+  <link rel="stylesheet" href="style/javascript.fullPage.css">
+  <link rel="stylesheet" href="style/main.css">
+
+  <meta name=viewport content="width=device-width, initial-scale=1">
+</head>
+
+<body id="homepage">
+  <div class="description">
+    Los Angeles, USA
+  </div>
+  <div class="scroll-hint">
+    <img src="scroll-hint.svg" class="arrow-icon"/>
+    <h5 class="text">Use scroll or keyboard to navigate</h5>
+  </div>
+  <div id="fullpage">
+    <div class="section" id="focus-section">
+      <span><h1>Front End</h1></span>
+      <span><h1>Developer &</h1></span>
+      <span><h1>Designer.</h1></span>
+    </div>
+    <div class="section" id="projects-section">
+      <h1><a href="/cinefile.html" class="internal link-icon">Cinefile</a></h1>
+      <h1><a href="/cinefile.html" class="internal link-icon">Polytone</a></h1>
+      <h1><a href="/cinefile.html" class="internal link-icon">Colorly</a></h1>
+    </div>
+
+    <div class="section" id="github-section">
+      <h1><a href="#">Visit Github</a></h1>
+      <h1><a href="#">For More</a></h1>
+      <h1><a href="#" class="link-icon">Repositories.</a></h1>
+    </div>
+    
+    <div class="section" id="about-section">
+      <div class="contacts animate-about">
+        <h1><a href="#" class="link-icon">Email</a></h1>
+        <h1><a href="##" class="link-icon">Twitter</a></h1>
+        <h1><a href="###" class="link-icon">Phone</a></h1>
+      </div>
+      <div class="info animate-about">
+        <p>I’m a self taught developer currently based in Los Angeles, California. I like good design and enjoy writing readable code.</p>
+        <p class="desktop-info">Currently looking for employment with good people who work on interesting projects. Need a hand? I have two. Mail me.</p>
+        <p class="mobile-contacts">
+          <a href="#">Email</a>
+          <a href="#">Twitter</a>
+          <a href="#">Phone</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="fullpage-footer">
+    <a href="#focus" class="underline">Focus</a>
+    <a href="#projects">Projects</a>
+    <a href="#github">Github</a>
+    <a href="#about">About</a>
+  </div>
+  
+  <div class="blackbox"></div>
+  
+  <script src="src/javascript.fullPage.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+  <script src="src/transition.js"></script>
+  <script src="src/main.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Troy Codes</title>
+
+  <link rel="stylesheet" href="style/normalize.css">
   <link rel="stylesheet" href="style/main.css">
 
   <meta name=viewport content="width=device-width, initial-scale=1">
 </head>
 
 <body data-home="true">
-  <!-- <div class="home-header">
-    <h4>Troy Codes</h4>
-    <h4>Available For Hire</h4>
-  </div> -->
-
   <section class="about-section">
     <div class="content">
-      <!-- <h4>
-        Specialty.
-      </h4> -->
       <h4>
         Hello I'm Troy
       </h4>
@@ -28,7 +96,7 @@
     </div>
   </section>
 
-  <section class="home projects-section">
+  <section class="hover projects-section">
     <div class="pull-bg"></div>
     <div class="content">
       <h4 class="heading">
@@ -43,7 +111,7 @@
     </div>
   </section>
 
-  <section class="home github-section">
+  <section class="hover github-section">
     <div class="pull-bg"></div>
     <div class="content">
       <h4 class="heading">
@@ -58,7 +126,7 @@
     </div>
   </section>
 
-  <section class="home connect-section">
+  <section class="hover connect-section">
     <div class="pull-bg"></div>
     <div class="content">
       <h4 class="heading">
@@ -76,20 +144,18 @@
     <h5>I'm Available For Hire</h5>
     <h5>Los Angeles, USA</h5>
   </footer>
-  <!-- <div class="blackbox-in"></div> -->
   <div class="blackbox"></div>
   
-  <script src="src/jquery.min.js"></script>
+
   <script src="src/CustomEase.min.js"></script>
-  <!-- <script src="src/balancetext.min.js"></script>
-  <script src="src/anime.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.0/plugins/CSSPlugin.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.0/TweenLite.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.0/TimelineLite.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
   <script src="src/main.js"></script>
 </body>
 
-</html>
+</html> -->
+
+
+
 
 
 

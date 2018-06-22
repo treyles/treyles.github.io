@@ -36,7 +36,8 @@ body {
   font-family: 'apercu-light', 'helvetica', sans-serif;
   font-size: 18px;
   -webkit-transition: .4s ease;
-  transition: .4s ease; }
+  transition: .4s ease;
+  background: #000; }
 
 #homepage {
   background: #000; }
@@ -86,14 +87,16 @@ h1, h2 {
   .link:after {
     content: '';
     position: absolute;
+    bottom: -8px;
+    left: 0;
     width: 0;
     height: 1px;
-    margin-top: 5px;
     background: #000;
     -webkit-transition: width .3s;
     transition: width .3s; }
-  .link:hover:after {
-    width: 100%; }
+  @media only screen and (min-width: 968px) {
+    .link:hover:after {
+      width: 100%; } }
 
 .description {
   position: fixed;
@@ -102,7 +105,6 @@ h1, h2 {
   padding: 3.5vh;
   z-index: 999;
   color: #fff;
-  opacity: .4;
   -webkit-transition: .4s ease;
   transition: .4s ease;
   opacity: 0; }
@@ -135,10 +137,11 @@ h1, h2 {
     opacity: 0;
     -webkit-transition: .4s ease;
     transition: .4s ease; }
-  .scroll-hint:hover .arrow-icon {
-    opacity: 0; }
-  .scroll-hint:hover .text {
-    opacity: .4; }
+  @media only screen and (min-width: 968px) {
+    .scroll-hint:hover .arrow-icon {
+      opacity: 0; }
+    .scroll-hint:hover .text {
+      opacity: .4; } }
 
 .section {
   display: -webkit-box;
@@ -298,6 +301,9 @@ h1, h2 {
   height: 100%;
   background: #000; }
 
+.project-container {
+  background: #fff; }
+
 .project-title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -389,21 +395,23 @@ h1, h2 {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     margin-top: 10vh;
     max-width: 530px;
     line-height: 37px;
     font-size: 20px;
     color: #A2A2A2;
     opacity: 0; }
+    @media only screen and (max-width: 768px) {
+      .project-info .hashtags {
+        font-size: 18px; } }
     .project-info .hashtags ul {
       margin: 0;
       padding: 0;
       list-style: none;
-      display: inline-block;
-      font-size: 18px; }
+      display: inline-block; }
 
 .project-content {
   display: -webkit-box;
@@ -419,22 +427,70 @@ h1, h2 {
       flex-wrap: wrap;
   padding: 0 6vw;
   margin-top: 10vh; }
+  .project-content.cinefile > div {
+    background: #018BD5; }
+  .project-content.polytone > div {
+    background: #eee; }
   .project-content .full {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
     width: 100%;
     margin: 2vw 0;
-    background: #eee; }
+    overflow: hidden; }
     .project-content .full img {
-      display: block;
       width: 100%; }
   .project-content .half {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: calc(50% - 2vw);
-    background: #eee;
-    height: 500px;
-    margin: 2vw 0; }
+    margin: 2vw 0;
+    position: relative; }
+    .project-content .half img {
+      width: 100%; }
     @media only screen and (max-width: 768px) {
       .project-content .half {
         width: 100%;
         height: 100%; } }
+
+.iphone-content {
+  position: absolute;
+  top: 20.2%;
+  left: 31%;
+  width: 38%;
+  height: 58.5%;
+  -o-object-fit: cover;
+     object-fit: cover; }
+  .iphone-content video {
+    width: 100%; }
+
+.polytone-container {
+  width: 75%;
+  margin: 10% 0;
+  border: 1.5vw solid #000;
+  border-radius: 1.5vw;
+  -webkit-box-shadow: 2px 2px 3vw 1vw rgba(0, 0, 0, 0.07);
+          box-shadow: 2px 2px 3vw 1vw rgba(0, 0, 0, 0.07); }
+  .polytone-container video {
+    display: block;
+    width: 100%; }
+  .polytone-container img {
+    display: block;
+    width: 100%; }
 
 .next-project {
   display: -webkit-box;

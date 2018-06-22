@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>cinefile</title>
@@ -9,71 +10,90 @@
 </head>
 
 <body>
-  <div class="project-header">
-    <a href="/index.html" class="internal back">
-      <img src="arrow.svg"/>
-      <span>Home</span>
-    </a>
-    <div class="external-links">
-      <a href="https://cinefile.io/" target="_blank" class="link">
-        Visit Site
+  <div class="project-container">
+    <div class="project-header">
+      <a href="/index.html" class="internal back">
+        <img src="arrow.svg" />
+        <span>Home</span>
       </a>
-      <a href="https://github.com/treyles/cinefile" target="_blank" class="link">
-        See Repo
-      </a>
-    </div>
-  </div>
-  <section class="project-info animate-up in-view">
-    <h2>Urban Fruit, a fun, bold snacks company that are completely bananas about fruit. I designed a new, mobile optimised website for them to show off their products and share their story.</h2>
-    <div class="hashtags">
-      <ul>
-        <li>#React</li>
-        <li>#ES6</li>
-        <li>#Sass</li>
-      </ul>
-      <ul>
-        <li>#Webpack</li>
-        <li>#Firebase</li>
-        <li>#API</li>
-      </ul>
-      <ul>
-        <li>#Jest</li>
-        <li>#CSS Grid</li>
-        <li>#Responsive</li>
-      </ul>
-    </div>
-  </section>
-  <section class="project-content">
-    <div class="full">
-      <img src="assets/cinefile/cinefile-01.jpg" />
-    </div>
-    <div class="half animate-up">b</div>
-    <div class="half animate-up">c</div>
-  </section>
-  <section class="next-project">
-    <div class="pull-bg"></div>
-    <div class="content animate-up">
-      <h4>
-        Next Project
-        <span class="underline"></span>
-      </h4>
-      <h2>
-        <a href="/polytone.html" class="internal">
-          A Music Sequencer and Animation Experiment.
+      <div class="external-links">
+        <a href="https://cinefile.io/" target="_blank" class="link">
+          Visit Site
         </a>
-      </h2>
+        <a href="https://github.com/treyles/cinefile" target="_blank" class="link">
+          See Repo
+        </a>
+      </div>
     </div>
-  </section>
-  
+    <section class="project-info animate-up in-view">
+      <h2>Urban Fruit, a fun, bold snacks company that are completely bananas about fruit. I designed a new, mobile optimised
+        website for them to show off their products and share their story.</h2>
+      <div class="hashtags">
+        <ul>
+          <li>#React</li>
+          <li>#ES6</li>
+          <li>#Sass</li>
+        </ul>
+        <ul>
+          <li>#Webpack</li>
+          <li>#Firebase</li>
+          <li>#API</li>
+        </ul>
+        <ul>
+          <li>#Jest</li>
+          <li>#CSS Grid</li>
+          <li>#Responsive</li>
+        </ul>
+      </div>
+    </section>
+    <section class="project-content cinefile">
+      <div class="full">
+        <img src="assets/cinefile/cinefile-01.jpg" />
+      </div>
+      <div class="half animate-up">
+        <img src="assets/cinefile/cinefile-02.jpg" />
+        <div class="iphone-content">
+          <video
+            src="assets/cinefile/cinefile-video.mp4"
+            poster="assets/cinefile/cinefile-poster.jpg"
+            muted
+            autoplay
+            loop>
+          </video> 
+        </div>
+      </div>
+      <div class="half animate-up">
+        <img src="assets/cinefile/cinefile-03.jpg" />
+      </div>
+      <div class="full animate-up">
+        <img src="assets/cinefile/cinefile-04.jpg" />
+      </div>
+    </section>
+    <section class="next-project">
+      <div class="pull-bg"></div>
+      <div class="content animate-up">
+        <h4>
+          Next Project
+          <span class="underline"></span>
+        </h4>
+        <h2>
+          <a href="/polytone.html" class="internal">
+            A Music Sequencer and Animation Experiment.
+          </a>
+        </h2>
+      </div>
+    </section>
+  </div>
+
   <div class="blackbox"></div>
   <div class="project-title">
     <h1>Cinefile</h1>
   </div>
-  
+
   <script src="src/CustomEase.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
   <script src="src/transition.js"></script>
-  <script src="src/project.js"></script> 
+  <script src="src/project.js"></script>
 </body>
 
 </html>

@@ -78,5 +78,5 @@ var introFocus = new TimelineLite()
   .to(heroText[1], 1.3, {y: '0%'}, 'hero')
   .to(heroText[2], 1.3, {y: '0%'}, 'hero')
   .to('.fullpage-footer', 1.3, {y: '0%'}, '-=.8')
-  .to('.description', .4, {alpha: .4}, '-=.4')
+  .fromTo('.description', .4, {alpha: 0}, {alpha: .4}, '-=.4')
   .to('.scroll-hint', .4, {y: '0%', alpha: 1});

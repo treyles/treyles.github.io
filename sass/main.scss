@@ -1,43 +1,39 @@
 $hero-gray: lightgray;
-$hero-text: #0041F8; // blue
+$hero-text: #0041f8;
 
 * ::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 // hightlight text
 ::selection {
-  background: #0041F8;
+  background: #0041f8;
   text-shadow: none;
-  color: #FFF; 
+  color: #fff;
 }
 
 * {
   cursor: url('/assets/blue-cursor.png') 8 8, auto;
   cursor: image-set(
-    url('/assets/blue-cursor.png') 1x,
-    url('/assets/blue-cursor2.png') 2x
-  ) 8 8, auto;
+        url('/assets/blue-cursor.png') 1x,
+        url('/assets/blue-cursor2.png') 2x
+      )
+      8 8,
+    auto;
   box-sizing: border-box;
 }
 
 .section a,
-.next-project a {
+.next-project a,
+.github-icon h1 {
   cursor: url('/assets/blue-cursor-click.png') 25 25, auto;
   cursor: image-set(
-    url('/assets/blue-cursor-click.png') 1x,
-    url('/assets/blue-cursor-click2.png') 2x
-  ) 25 25, auto;
-
-  // &.back {
-  //   cursor: url('/assets/blue-cursor-back.png') 25 25, auto;
-  //   cursor: image-set(
-  //     url('/assets/blue-cursor-back.png') 1x,
-  //     url('/assets/blue-cursor-back2.png') 2x
-  //   ) 25 25, auto;
-  // }
+        url('/assets/blue-cursor-click.png') 1x,
+        url('/assets/blue-cursor-click2.png') 2x
+      )
+      25 25,
+    auto;
 }
-
 
 @font-face {
   font-family: 'apercu-light';
@@ -49,7 +45,7 @@ $hero-text: #0041F8; // blue
   src: url('font/portrait-medium.woff') format('woff');
 }
 
-@mixin flex($x : center, $y: center) {
+@mixin flex($x: center, $y: center) {
   display: flex;
   justify-content: $x;
   align-items: $y;
@@ -74,6 +70,12 @@ $hero-text: #0041F8; // blue
   }
 }
 
+@mixin small-height {
+  @media only screen and (max-height: 768px) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media only screen and (min-width: 968px) {
     @content;
@@ -83,24 +85,20 @@ $hero-text: #0041F8; // blue
 body {
   font-family: 'apercu-light', 'helvetica', sans-serif;
   font-size: 18px;
-  transition: .4s ease;
+  transition: 0.4s ease;
   background: #000;
-  // background-image: linear-gradient(white 90%, black 10%)
 }
 
 #homepage {
   background: #000;
 
   &.hovering {
-    background: #2102F5;
+    background: #2102f5;
   }
 }
 
-// html {
-//   background-color: linear-gradient(white 90%, black 10%)
-// }
-
-h1, h2 {
+h1,
+h2 {
   font-family: 'portrait-medium', sans-serif;
 }
 
@@ -122,11 +120,11 @@ h1, h2 {
   }
 }
 
-.link {  
+.link {
   text-decoration: none;
   color: inherit;
   position: relative;
-  transition: .3s ease;
+  transition: 0.3s ease;
   outline: none;
 
   // increase clickable area for cursor
@@ -148,7 +146,7 @@ h1, h2 {
     width: 0;
     height: 1px;
     background: #000;
-    transition: width .3s;
+    transition: width 0.3s;
   }
 
   @include desktop {
@@ -158,9 +156,6 @@ h1, h2 {
   }
 }
 
-
-// HOME
-
 .description {
   position: fixed;
   top: 0;
@@ -168,8 +163,7 @@ h1, h2 {
   padding: 3.5vh;
   z-index: 999;
   color: #fff;
-  // opacity: .4;
-  transition: .4s ease;
+  transition: 0.4s ease;
   opacity: 0;
 }
 
@@ -186,19 +180,23 @@ h1, h2 {
   .arrow-icon {
     position: absolute;
     opacity: 1;
-    transition: .4s ease;
+    transition: 0.4s ease;
   }
-  
+
   .text {
     color: #fff;
     opacity: 0;
-    transition: .4s ease;
+    transition: 0.4s ease;
   }
 
   @include desktop {
     &:hover {
-      .arrow-icon { opacity: 0; }
-      .text { opacity: .4; }
+      .arrow-icon {
+        opacity: 0;
+      }
+      .text {
+        opacity: 0.4;
+      }
     }
   }
 }
@@ -210,39 +208,53 @@ h1, h2 {
   position: relative;
   padding-bottom: 11vh;
 
-  // span {
-  //   margin-bottom: 3vh;
-  //   &:last-child { margin-bottom: 0; }
-  // }
-
   h1 {
     text-align: center;
     padding-bottom: 3vh;
-    @include small-desktop { font-size: 15vw; }
-    @include mobile { font-size: 60px; }
+    @include small-desktop {
+      font-size: 15vw;
+    }
 
-    &:last-child { padding-bottom: 0; }
+    @include small-height {
+      font-size: 120px;
+    }
+
+    @include mobile {
+      font-size: 60px;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
 
     &.hovering {
-      color: #30EBE1;
+      color: #30ebe1;
     }
   }
 
   a {
     position: relative;
-    transition: .4s ease;
+    transition: 0.4s ease;
 
     &.link-icon {
       &:after {
         position: absolute;
-        content: url('/circle-arrow.svg');
+        content: url('../assets/circle-arrow.svg');
         pointer-events: none;
         line-height: 0;
         margin-left: 30px;
         top: 50%;
         transform: translateY(-50%);
-        @include mobile { display: none; }
-      } 
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+
+    &.github-icon {
+      &:after {
+        right: -7%;
+      }
     }
   }
 }
@@ -253,7 +265,9 @@ h1, h2 {
     display: inline-block;
     overflow: hidden;
     margin-bottom: 3vh;
-    &:last-child { margin-bottom: 0; }
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     h1 {
       transform: translateY(100%);
@@ -265,10 +279,12 @@ h1, h2 {
   .contacts {
     z-index: 8;
     transition: 2s cubic-bezier(0.19, 1, 0.22, 1);
-    @include small-desktop { display: none; }
+    @include small-desktop {
+      display: none;
+    }
 
     &.play {
-      transform: translateX(-220px)
+      transform: translateX(-220px);
     }
   }
 
@@ -278,20 +294,22 @@ h1, h2 {
     line-height: 33px;
     opacity: 0;
     transition: 2s cubic-bezier(0.19, 1, 0.22, 1);
-    @include small-desktop { 
+    @include small-desktop {
       opacity: 1;
       text-align: center;
     }
 
     .desktop-info {
-      @include small-desktop { display: none; }
+      @include small-desktop {
+        display: none;
+      }
     }
 
     .mobile-contacts {
       display: none;
 
       a {
-        border-bottom: 1px solid rgba(255, 255, 255, .4);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
       }
 
       @include small-desktop {
@@ -304,9 +322,11 @@ h1, h2 {
     }
 
     &.play {
-      transform: translateX(300px);
+      transform: translateX(270px);
       opacity: 1;
-      @include small-desktop { transform: translateX(0); }
+      @include small-desktop {
+        transform: translateX(0);
+      }
     }
   }
 }
@@ -324,7 +344,7 @@ h1, h2 {
   transform: translateY(100%);
 
   a {
-    transition: .4s ease;
+    transition: 0.4s ease;
     position: relative;
 
     &:after {
@@ -335,7 +355,7 @@ h1, h2 {
       bottom: -8px;
       height: 1px;
       background: #000;
-      transition: width .3s;
+      transition: width 0.3s;
     }
 
     &.underline:after,
@@ -343,7 +363,7 @@ h1, h2 {
       width: 100%;
     }
 
-    &:nth-child(-n+3) {
+    &:nth-child(-n + 3) {
       margin-right: 4vw;
     }
   }
@@ -359,10 +379,6 @@ h1, h2 {
   background: #000;
 }
 
-
-
-// PROJECT PAGES
-
 .project-container {
   background: #fff;
 }
@@ -377,7 +393,7 @@ h1, h2 {
   width: 100%;
   height: 100%;
   color: #fff;
-  
+
   h1 {
     font-size: 13vw;
   }
@@ -387,7 +403,7 @@ h1, h2 {
   .animate-up {
     transform: translate3d(0, 80px, 0);
     transition: transform 2.5s cubic-bezier(0.19, 1, 0.22, 1);
-  
+
     &.in-view {
       transform: translate3d(0, 0, 0);
     }
@@ -403,7 +419,7 @@ h1, h2 {
   width: 100%;
   height: 16vh;
   padding: 0 6vw;
-  transition: .3s ease;
+  transition: 0.3s ease;
 
   a {
     position: relative;
@@ -425,7 +441,6 @@ h1, h2 {
   img,
   span {
     pointer-events: none;
-    // font-size: 18px;
   }
 
   .external-links > a {
@@ -445,7 +460,7 @@ h1, h2 {
     max-width: 1200px;
     opacity: 0;
     transform: translateY(110px);
-    @include mobile { 
+    @include mobile {
       font-size: 7.5vw;
       line-height: 11vw;
     }
@@ -457,10 +472,12 @@ h1, h2 {
     max-width: 530px;
     line-height: 37px;
     font-size: 20px;
-    color: #A2A2A2;
+    color: #a2a2a2;
     opacity: 0;
-    @include mobile { font-size: 18px; }
-    
+    @include mobile {
+      font-size: 18px;
+    }
+
     ul {
       margin: 0;
       padding: 0;
@@ -477,15 +494,18 @@ h1, h2 {
   margin-top: 10vh;
 
   &.cinefile {
-    & > div { background: #018BD5; }
+    & > div {
+      background: #d3d3d3;
+    }
   }
 
   &.polytone {
-    & > div { background: #eee; }
+    & > div {
+      background: #bebebe;
+    }
   }
 
   .full {
-    // @include flex(center, flex-end);
     @include flex;
     position: relative;
     width: 100%;
@@ -530,9 +550,7 @@ h1, h2 {
 .polytone-container {
   width: 75%;
   margin: 10% 0;
-  border: 1.5vw solid #000;
-  border-radius: 1.5vw;
-  box-shadow: 2px 2px 3vw 1vw rgba(0, 0, 0, .07);
+  box-shadow: 2px 2px 2vw 1vw rgba(0, 0, 0, 0.1);
 
   video {
     display: block;
@@ -561,14 +579,18 @@ h1, h2 {
     margin: 0;
     background: #000;
     transform-origin: bottom;
-    @include mobile { transform: scaleY(1); }
+    @include mobile {
+      transform: scaleY(1);
+    }
   }
 
   h4 {
     display: inline-block;
     position: relative;
     margin-bottom: 30px;
-    @include mobile { color: #fff; }
+    @include mobile {
+      color: #fff;
+    }
 
     .underline {
       position: absolute;
@@ -579,12 +601,14 @@ h1, h2 {
       left: 0;
       height: 1px;
       background: #fff;
-      @include mobile { transform: scaleX(1); }
+      @include mobile {
+        transform: scaleX(1);
+      }
     }
   }
 
   h2 {
-    @include mobile { 
+    @include mobile {
       font-size: 7.5vw;
       line-height: 11vw;
       color: #fff;
@@ -595,7 +619,7 @@ h1, h2 {
   h4,
   .pull-bg,
   .underline {
-    transition: .7s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: 0.7s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   .content {
@@ -605,85 +629,16 @@ h1, h2 {
 
   @include desktop {
     &.hovering {
-      .pull-bg { transform: scaleY(1); }
-      h4, h2 { color: #fff; }
-      .underline { transform: scaleX(1); }
+      .pull-bg {
+        transform: scaleY(1);
+      }
+      h4,
+      h2 {
+        color: #fff;
+      }
+      .underline {
+        transform: scaleX(1);
+      }
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-// MOCKS
-
-// .iphone-wrapper {
-//   @include absolute-center;
-
-
-//   img {
-//     // height: 65vh;
-//     height: 600px;
-//     // height: 80vh;
-//     position: relative;
-
-//     // box-shadow: 3px 3px 30px 10px rgba(0,0,0, 0.2)
-//   }
-
-//   .iphone-content {
-//     // @include flex;
-//     position: absolute;
-//     top: 12.3%;
-//     left: 7.1%;
-//     width: 86%;
-//     height: 74.8%;
-//     object-fit: cover;
-//     // background: #eee;
-
-//     .folio-iphone {
-//       width: 100%;
-//       // height: 100%;
-//       // z-index: 999;
-//     }
-//   }
-// }
-
-// .macbook-wrapper {
-//   @include absolute-center;
-
-
-//   img {
-//     // height: 65vh;
-//     // height: 500px;
-//     // height: 80vh;
-//     width: 45vw;
-//     position: relative;
-
-//     // box-shadow: 3px 3px 30px 10px rgba(0,0,0, 0.2)
-//   }
-
-//   .macbook-content {
-//     // @include flex;
-//     position: absolute;
-//     top: 7%;
-//     left: 12.4%;
-//     width: 75.2%;
-//     height: 80%;
-//     object-fit: cover;
-//     background: #eee;
-
-//     .folio-macbook {
-//       width: 100%;
-//       // height: 100%;
-//       // z-index: 999;
-//     }
-//   }
-// }

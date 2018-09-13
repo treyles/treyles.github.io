@@ -435,7 +435,7 @@ h2 {
   padding: 0 6vw;
   margin-top: 10vh; }
   .project-content.cinefile > div {
-    background: #d3d3d3; }
+    background: #e3e3e3; }
   .project-content.polytone > div {
     background: #bebebe; }
   .project-content .full {
@@ -494,6 +494,18 @@ h2 {
     display: block;
     width: 100%; }
   .polytone-container img {
+    display: block;
+    width: 100%; }
+
+.colorly-container {
+  width: 75%;
+  margin: 10% 0;
+  -webkit-box-shadow: 2px 2px 2vw 1vw rgba(0, 0, 0, 0.05);
+          box-shadow: 2px 2px 2vw 1vw rgba(0, 0, 0, 0.05); }
+  .colorly-container video {
+    display: block;
+    width: 100%; }
+  .colorly-container img {
     display: block;
     width: 100%; }
 

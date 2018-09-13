@@ -495,7 +495,7 @@ h2 {
 
   &.cinefile {
     & > div {
-      background: #d3d3d3;
+      background: #e3e3e3;
     }
   }
 
@@ -551,6 +551,22 @@ h2 {
   width: 75%;
   margin: 10% 0;
   box-shadow: 2px 2px 2vw 1vw rgba(0, 0, 0, 0.1);
+
+  video {
+    display: block;
+    width: 100%;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.colorly-container {
+  width: 75%;
+  margin: 10% 0;
+  box-shadow: 2px 2px 2vw 1vw rgba(0, 0, 0, 0.05);
 
   video {
     display: block;

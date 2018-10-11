@@ -72,7 +72,7 @@
     });
   }
 
-  var introFocus = new TimelineLite()
+  new TimelineLite()
     .set('.blackbox', { alpha: 0, y: '-100%' })
     .add('hero', 1)
     .to(heroText[0], 1.3, { y: '0%' }, 'hero')

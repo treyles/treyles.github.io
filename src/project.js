@@ -1,6 +1,17 @@
 (function() {
   var didScroll;
   var lastScrollTop = 0;
+  var titleEase = CustomEase.create(
+    'custom',
+    'M0,0 C0.12,0.664 0.456,0.401 0.614,0.55 0.772,0.726 0.602,0.942 1,1'
+  );
+
+  new TimelineLite()
+    .to('.project-title', 2.5, { y: '-100%', delay: 0.5, ease: titleEase })
+    .to('.blackbox', 0.8, { y: '-100%' }, '-=.6')
+    .set('.blackbox', { alpha: 0 })
+    .to('h2', 1.6, { alpha: 1, y: '0' }, '-=.6')
+    .to('.hashtags', 0.4, { alpha: 1, ease: Power0.easeNone }, '-=.8');
 
   window.onscroll = function() {
     didScroll = true;
@@ -65,18 +76,6 @@
   function handleNextProjectHover() {
     nextProject.classList.toggle('hovering');
   }
-
-  var titleEase = CustomEase.create(
-    'custom',
-    'M0,0 C0.12,0.664 0.456,0.401 0.614,0.55 0.772,0.726 0.602,0.942 1,1'
-  );
-
-  var introProject = new TimelineLite()
-    .to('.project-title', 2.5, { y: '-100%', delay: 0.5, ease: titleEase })
-    .to('.blackbox', 0.8, { y: '-100%' }, '-=.6')
-    .set('.blackbox', { alpha: 0 })
-    .to('h2', 1.6, { alpha: 1, y: '0' }, '-=.6')
-    .to('.hashtags', 0.4, { alpha: 1, ease: Power0.easeNone }, '-=.8');
 
   checkInView();
 })();

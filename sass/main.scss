@@ -71,7 +71,7 @@ $hero-text: #0041f8;
 }
 
 @mixin small-height {
-  @media only screen and (max-height: 768px) {
+  @media only screen and (max-height: 940px) {
     @content;
   }
 }
@@ -290,7 +290,7 @@ h2 {
 
   .info {
     position: absolute;
-    width: 265px;
+    width: 304px;
     line-height: 33px;
     opacity: 0;
     transition: 2s cubic-bezier(0.19, 1, 0.22, 1);

@@ -168,7 +168,7 @@ h2 {
     @media only screen and (max-width: 968px) {
       .section h1 {
         font-size: 15vw; } }
-    @media only screen and (max-height: 768px) {
+    @media only screen and (max-height: 940px) {
       .section h1 {
         font-size: 120px; } }
     @media only screen and (max-width: 768px) {
@@ -222,7 +222,7 @@ h2 {
 
 #about-section .info {
   position: absolute;
-  width: 265px;
+  width: 304px;
   line-height: 33px;
   opacity: 0;
   -webkit-transition: 2s cubic-bezier(0.19, 1, 0.22, 1);

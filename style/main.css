@@ -434,7 +434,7 @@ h2 {
       flex-wrap: wrap;
   padding: 0 6vw;
   margin-top: 10vh; }
-  .project-content.cinefile > div {
+  .project-content.default-bg > div {
     background: #e3e3e3; }
   .project-content.polytone > div {
     background: #bebebe; }
